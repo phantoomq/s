@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<title>Вывод программы</title>
+<title>Печать текста</title>
 <style>
     body {
         background: black;
@@ -15,26 +15,25 @@
 </head>
 <body>
 
-<div id="output"></div>
+<div id="out"></div>
 
 <script>
-    const text = 
-`[твой текст здесь]
-[вставь сюда свой текст]
-[каждая строка будет печататься с задержкой]`;
+const text = `Пример текста
+который печатается
+с задержкой`;
 
-    let i = 0;
-    const speed = 70; // задержка как в C++
+let i = 0;
+const speed = 70; // задержка как в C++
 
-    function typeWriter() {
-        if (i < text.length) {
-            document.getElementById("output").textContent += text.charAt(i);
-            i++;
-            setTimeout(typeWriter, speed);
-        }
+function type() {
+    if (i < text.length) {
+        document.getElementById("out").textContent += text[i];
+        i++;
+        setTimeout(type, speed);
     }
+}
 
-    typeWriter();
+type();
 </script>
 
 </body>
