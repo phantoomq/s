@@ -1,11 +1,41 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <title>ww basedgod life</title>
-
+<meta charset="UTF-8">
+<title>Вывод программы</title>
+<style>
+    body {
+        background: black;
+        color: yellow;
+        font-family: Consolas, monospace;
+        white-space: pre-line;
+        font-size: 20px;
+    }
+</style>
 </head>
 <body>
+
+<div id="output"></div>
+
+<script>
+    const text = 
+`[твой текст здесь]
+[вставь сюда свой текст]
+[каждая строка будет печататься с задержкой]`;
+
+    let i = 0;
+    const speed = 70; // задержка как в C++
+
+    function typeWriter() {
+        if (i < text.length) {
+            document.getElementById("output").textContent += text.charAt(i);
+            i++;
+            setTimeout(typeWriter, speed);
+        }
+    }
+
+    typeWriter();
+</script>
 
 </body>
 </html>
