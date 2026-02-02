@@ -2,12 +2,12 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<title>Печать текста</title>
+<title>Typing Effect</title>
 <style>
     body {
-        background: black;
+        background-color: black;
         color: yellow;
-        font-family: Consolas, monospace;
+        font-family: monospace;
         white-space: pre-line;
         font-size: 20px;
     }
@@ -15,26 +15,8 @@
 </head>
 <body>
 
-<div id="out"></div>
+<div id="output"></div>
 
-<script>
-const text = `Пример текста
-который печатается
-с задержкой`;
-
-let i = 0;
-const speed = 70; // задержка как в C++
-
-function type() {
-    if (i < text.length) {
-        document.getElementById("out").textContent += text[i];
-        i++;
-        setTimeout(type, speed);
-    }
-}
-
-type();
-</script>
-
+<script src="index.js"></script>
 </body>
 </html>
